@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/pages/home'
+import Sobre from './src/pages/sobre';
+import Contato from './src/pages/Contato';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+      <Stack.Navigator>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        <Stack.Screen name='Home' component={Home}
+          options={{
+            title: 'Tela de início',
+            headerStyle: { backgroundColor: '#121212' },
+            headerTintColor: '#fff',
+            headerShown: false }} />
+
+        <Stack.Screen name="Sobre"
+         component={Sobre} 
+         options={{ title: 'Pagina Sobre' }} />
+
+         <Stack.Screen name='Contato'
+         component={Contato}
+         options={{title: 'Pagina de contato'}} />
+
+
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
