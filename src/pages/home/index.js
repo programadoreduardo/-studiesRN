@@ -4,15 +4,15 @@ import { useNavigation } from '@react-navigation/native'
 export default function Home() {
     const navigation = useNavigation();
 
-    function navegaSobre() {
-        navigation.navigate('Sobre', {nome: 'Carol Marques', email: 'duda@teste.com'})
+    function navegaDetalhes() {
+        navigation.navigate('Detalhes')
     }
 
 
     return (
         <View style={styles.container}>
             <Text>Tela HOME</Text>
-            <Button title='Ir para sobre' onPress={navegaSobre} />
+            <Button title='Ir para Detlahes' onPress={navegaDetalhes} />
         </View>
     );
 }
@@ -22,5 +22,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#ff0000'
     }
 });

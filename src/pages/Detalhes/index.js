@@ -1,13 +1,9 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text,  View } from 'react-native';
 
-
-export default function Sobre() {
-
+export default function Detalhes() {
     return (
         <View style={styles.container}>
-            <Text>Pagina sobre</Text>
-
-
+            <Text>Pagina detalhes do usuário</Text>
         </View>
     );
 }
